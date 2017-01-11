@@ -30,7 +30,9 @@ angular.module('mainCtrl', [])
 							$scope.comments = getData;
 							$scope.loading = false;
 						});
-
+						
+					// 書き込み後コメントがフォームに残らないように
+					$scope.commentData = null;
 				})
 				.error(function(data) {
 				    console.log("# Error log ========");

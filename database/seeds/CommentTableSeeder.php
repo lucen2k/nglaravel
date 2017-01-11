@@ -16,17 +16,17 @@ class CommentTableSeeder extends Seeder
         DB::table('comments')->delete();
         
         Comment::create([
-            'author' => '名無しさん',
+            'author' => '名無し',
             'text' => '今日はいい天気ですね。気持ちが良いですね。'
         ]);
         
         Comment::create([
-            'author' => '山田さん',
+            'author' => '山田',
             'text' => '久しぶり。山田です。'
         ]);
         
         Comment::create([
-            'author' => '太郎さん',
+            'author' => '太郎',
             'text' => 'Laravelって便利なんですね。はじめて知りました。'
         ]);
     }
