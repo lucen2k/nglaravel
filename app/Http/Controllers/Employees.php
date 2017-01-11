@@ -78,12 +78,11 @@ class Employees extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function destroy(Request $request) 
+    public function destroy($id) 
     {
-        $employee = Employee::find($request->input('id'));
-
+        $employee = Employee::find($id);
         $employee->delete();
 
-        return "Employee record successfully deleted #" . $request->input('id');
+        return "Employee record successfully deleted #" . $id;
     }
 } 
