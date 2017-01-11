@@ -5,7 +5,7 @@ angular.module('commentService', [])
                 return $http.get('/api/comments');
             },
             
-            save: function(commentData){
+            store: function(commentData){
                 return $http({
                     method: 'POST',
                     url: '/api/comments',
@@ -14,7 +14,7 @@ angular.module('commentService', [])
                 });
             },
             
-            destory: function(id){
+            destroy: function(id){
                 return $http.delete('/api/comments/' + id);
             }
         }

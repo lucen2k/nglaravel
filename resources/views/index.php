@@ -45,12 +45,12 @@
 		</div>
 	</form>
 
-	<p class="text-center" ng-show="loading"><span class="fa fa-meh-o fa-5x fa-spin"></span></p>
+	<p class="text-center" ng-show="loading"><span class="fa fa-refresh fa-4x fa-spin"></span></p>
 
 	<div class="comment" ng-hide="loading" ng-repeat="comment in comments">
 		<h3>コメント #{{ comment.id }} <small>by {{ comment.author }}</h3>
 		<p>{{ comment.text }}</p>
-		<p><a href="#" ng-click="deleteComment(comment.id)" class="text-muted">削除</a></p>
+		<p><a ng-click="deleteComment(comment.id)" class="text-muted">削除</a></p>
 	</div>
 
 </div>
