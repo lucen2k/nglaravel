@@ -21,7 +21,7 @@ angular.module('mainCtrl', [])
 			$scope.loading = true;
 
 			// コメントを保存する。
-			Comment.save($scope.commentData)
+			Comment.store($scope.commentData)
 				.success(function(data) {
 
 					// 成功した場合、コメントリストをリフレッシュする
@@ -33,6 +33,7 @@ angular.module('mainCtrl', [])
 
 				})
 				.error(function(data) {
+				    console.log("# Error log ========");
 					console.log(data);
 				});
 		};

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
 use App\Http\Requests;
 use Response;
@@ -20,15 +21,15 @@ class CommentController extends Controller
     {
         Comment::create([
             'author' => Input::get('author'),
-            'text' => Input::get('comment')
+            'text' => Input::get('text')
         ]);
         
         return Response::json(['success' => true]);
     }
     
-    public function destory($id)
+    public function destroy($id)
     {
-        Comment::destory($id);
+        Comment::destroy($id);
         
         return Response::json(['success' => true]);
     }
