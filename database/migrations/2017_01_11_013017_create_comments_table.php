@@ -17,6 +17,7 @@ class CreateCommentsTable extends Migration
             
             $table->string('text');
             $table->string('author');
+            $table->tinyInteger('del_flg');
             
             $table->timestamps();
         });

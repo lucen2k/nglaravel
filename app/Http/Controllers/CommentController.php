@@ -14,7 +14,12 @@ class CommentController extends Controller
 {
     public function index()
     {
-        return Response::json(Comment::get());
+        $info = Comment::query()
+            ->where('del_flg', 0)
+            ->orderBy('id', 'desc')
+            ->get();
+            
+        return Response::json($info);
     }
     
     public function store()
@@ -29,7 +34,9 @@ class CommentController extends Controller
     
     public function destroy($id)
     {
-        Comment::destroy($id);
+        $comment = Comment::find($id);
+        $comment->del_flg = 1;
+        $comment->save();
         
         return Response::json(['success' => true]);
     }
