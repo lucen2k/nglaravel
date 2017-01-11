@@ -9,16 +9,20 @@ use App\Http\Requests;
 use Response;
 
 use App\Comment;
+use DB;
 
 class CommentController extends Controller
 {
     public function index()
     {
-        $info = Comment::query()
+        $info = Comment::select(
+                'id', 'author', 'text', 
+                DB::raw("DATE_FORMAT(created_at,'%Y.%m.%d %H:%i') as write_time")
+            )
             ->where('del_flg', 0)
             ->orderBy('id', 'desc')
             ->get();
-            
+
         return Response::json($info);
     }
     
