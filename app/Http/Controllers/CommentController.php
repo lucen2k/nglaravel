@@ -20,7 +20,7 @@ class CommentController extends Controller
     {
         Comment::create([
             'author' => Input::get('author'),
-            'text' => Input::get('text')
+            'text' => Input::get('comment')
         ]);
         
         return Response::json(['success' => true]);
